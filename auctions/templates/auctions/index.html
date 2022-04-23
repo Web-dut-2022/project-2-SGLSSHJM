@@ -11,7 +11,6 @@
     {% for list in a1 %}
     <div class = "card">
         <a class="title">{{list.title}}</a>
-        <a class= "cat">{{list.category}}</a>
         {% if list.image_url %}
             <img src="{{ list.image_url }}" class="list_img">
         {% else %}
@@ -36,7 +35,7 @@ p{
     width: 90%;
     margin-left: 5%;
     grid-template-rows: repeat(auto,1fr);
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     font-family: 'Nunito', sans-serif;
     text-align: center;
 }
