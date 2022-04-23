@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{% block title %}Auctions{% endblock %}</title>
+        <title>{% block title %}忙鱼{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Auctions</h1>
+        <h1>忙鱼</h1>
         <div>
             {% if user.is_authenticated %}
                 Signed in as <strong>{{ user.username }}</strong>.
@@ -19,37 +19,37 @@
         </div>
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+                <a class="nav-link" href="{% url 'index' %}">竞拍主页</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'cat_list' %}">Categories</a>
+                <a class="nav-link" href="{% url 'cat_list' %}">类别</a>
             </li>
 
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    <a class="nav-link" href="{% url 'logout' %}">登出</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'create' %}">Create Listing</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'watchlistpage' user.username %}">Watch List</a>
+                    <a class="nav-link" href="{% url 'create' %}">创建竞拍品</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'winnings' %}">Your Winnings</a>
+                    <a class="nav-link" href="{% url 'watchlistpage' user.username %}">愿望单</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'winnings' %}">竞拍成功单</a>
                 </li>
 
                 
 
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'login' %}">登录</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    <a class="nav-link" href="{% url 'register' %}">注册</a>
                 </li>
             {% endif %}
         </ul>
